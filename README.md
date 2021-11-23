@@ -3,7 +3,7 @@
 # Refras de Negocio:
 - [ ] (Barbara) O email do lead deve ser unico no banco de dados, não permitindo cadastrar 2 lead com o mesmo email
 - [ ] (Raline) Caso um email já cadastrado seja enviado para a o sistema devemos atualizar a lista de produtos, apenas
-- [ ] O sistema deve permitir realizar a pesquisa de todos os leads com vinculo com um produto especifico
+- [ ] (Dorayen) O sistema deve permitir realizar a pesquisa de todos os leads com vinculo com um produto especifico
 
 # Requisitos Técnicos:
 - [ ] (Barbara) Criar DTo de Entrada com Validacão de dados
