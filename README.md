@@ -6,8 +6,8 @@
 - [ ] O sistema deve permitir realizar a pesquisa de todos os leads com vinculo com um produto especifico
 
 # Requisitos Técnicos:
-- [ ] Criar DTo de Entrada com Validacão de dados
-- [ ] Criar componente para conversao de objetos(ModelMapper)
+- [ ] (Barbara) Criar DTo de Entrada com Validacão de dados
+- [ ] (Barbara) Criar componente para conversao de objetos(ModelMapper)
 - [ ] Criar Dto de Saida
 - [ ] Adicionar controller adivice no projeto
 - [ ] Adicionar repositorio para mensagens de validacao (mensage properties)
