@@ -14,8 +14,15 @@ public class LeadService {
   private LeadRepository leadRepository;
 
   public Lead salvarLead(Lead lead) {
+    verificarEmail(lead);
     return leadRepository.save(lead);
   }
 
+  public void verificarEmail(Lead novoLead) {
+    Lead lead = new Lead();
+    if (novoLead.getEmail().equalsIgnoreCase(lead.getEmail())) {
+      throw new RuntimeException();
+    }
+  }
 
 }
