@@ -15,33 +15,17 @@ public class LeadService {
     @Autowired
     private ProdutoRepository produtoRepository;
 
-    public Lead salvarLead(Lead lead) {
-        List<Produto> produtos = buscarProdutos(lead.getProdutosDeInteresse());
-        buscarProdutos(lead.getProdutosDeInteresse());
-        /*
-        O metodo tem um problema. Ele elimina os produtos já cadastrados do lead.
-        Isso não pode acontecer, faça a correção para que os produtos já cadastrado permaneçam e os novos sejam incluidos.
-         */
-        lead.setProdutosDeInteresse(produtos);
-        return leadRepository.save(lead);
-    }
+    public List<Produto> atualizarProdutos (List<Produto> novosProdutos){
+        List<Produto> listaAtual = new ArrayList<>();
 
-    private List<Produto> buscarProdutos(List<Produto> produtos) {
-        List<Produto> listaAtualizada = new ArrayList<>();
-
-        for (Produto produto : produtos) {
-            if (produtoRepository.existsByNome(produto.getNome())) {
-                listaAtualizada.add(produtoRepository.findByNome(produto.getNome()));
-            }else {
-                listaAtualizada.add(produto);
+        for (Produto produtoReferencia : novosProdutos){
+            if (produtoRepository.existsById(produtoReferencia.getId())){
+                listaAtual.add(produtoRepository.findByNome(produtoReferencia.getNome()));
+            } else {
+                listaAtual.add(produtoReferencia);
             }
         }
-
-        return listaAtualizada;
-    }
-
-    public List<Lead> buscarTodosPeloNomeProduto(String nomeProduto){
-        return leadRepository.findAllByProdutosDeInteresseNome(nomeProduto);
+        return listaAtual;
     }
 
 }
